@@ -4,14 +4,14 @@ const itemCount = document.getElementById('item-count')  // SEPET İÇİNDEKİ S
 const emptyCart = document.querySelector('.emptyCart')
 
 function startPage(){
-    const sepet = JSON.parse(localStorage.getItem('sepet'))
+    const sepet = JSON.parse(localStorage.getItem('sepet') == '' ? "[]":localStorage.getItem('sepet'))
 
     if(sepet){
         for(let i of sepet){
             sepeteEkle(i)
         }
     }else{
-        localStorage.setItem('sepet', [])
+        localStorage.setItem('sepet', "[]")
     }
 }
 
@@ -38,7 +38,7 @@ function sepeteEkle(urun){
     basket.append(div)
     itemCount.innerHTML++  // SEPET İÇİNDEKİ SAYIYI ÜRÜN EKLEDİKÇE ARTTIRDIK
    
-    const sepet = JSON.parse(localStorage.getItem('sepet'));
+    const sepet = JSON.parse(localStorage.getItem('sepet') == '' ? "[]":localStorage.getItem('sepet'));
     sepet.push(urun);
 
 
@@ -57,7 +57,7 @@ function arttir(id){
     let birimFiyat =fiyat.textContent / adet.textContent
     
 
-    let urunler = JSON.parse(localStorage.getItem('sepet'))
+    let urunler = JSON.parse(localStorage.getItem('sepet') == '' ? "[]":localStorage.getItem('sepet'))
     let ilgiliUrun = urunler.find(i => i.id == id)
     console.log(ilgiliUrun)
 
@@ -83,7 +83,7 @@ function azalt(id){
     let birimFiyat =fiyat.textContent / adet.textContent
     
 
-    let urunler = JSON.parse(localStorage.getItem('sepet'))
+    let urunler = JSON.parse(localStorage.getItem('sepet') == '' ? "[]":localStorage.getItem('sepet'))
     let ilgiliUrun = urunler.find(i => i.id == id)
     console.log(ilgiliUrun)
 
@@ -108,7 +108,7 @@ function azalt(id){
 
 function sil(id){
     const div = document.querySelector(`.urun${id}`)
-    let urunler = JSON.parse(localStorage.getItem('sepet'))
+    let urunler = JSON.parse(localStorage.getItem('sepet') == '' ? "[]":localStorage.getItem('sepet'))
     let guncelHal = urunler.filter((urun )=> urun.id != id)
     
     localStorage.setItem('sepet',JSON.stringify(guncelHal))
@@ -120,7 +120,7 @@ function sil(id){
 
 
 function calcSum(){
-    let urunler = JSON.parse(localStorage.getItem('sepet'))
+    let urunler = JSON.parse(localStorage.getItem('sepet') == '' ? "[]":localStorage.getItem('sepet'))
     let sums = 0;
 
     for(let i = 0; i < urunler.length; i++){
@@ -206,7 +206,7 @@ function satinAl(id){
         'adet':1
     }
     
-    let urunler = JSON.parse(localStorage.getItem('sepet') )
+    let urunler = JSON.parse(localStorage.getItem('sepet') == '' ? "[]":localStorage.getItem('sepet'))
     let ilgiliUrun = urunler.find(i => i.id == urun.id)
     if(ilgiliUrun == undefined){
         urunler.push(urun)
