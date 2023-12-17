@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tiger - Popular</title>
+  <!-- <link rel="stylesheet" href="./bootstrap.css"> -->
+  <link rel="stylesheet" href="./style.css">
+  <link rel="shortcut icon" href="./static/logo.png">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@300;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Verdana, sans-serif;
+      margin: 0;
+      background: #1A1423;
+      background-image: url(./static/fongif.gif);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+
+    .mySlides {
+      display: none;
+      text-align: center;
+      max-height: 100vh;
+      max-width: 100%;
+      /* margin-top: 30px; */
+
+    }
+
+    .mySlides img {
+      vertical-align: middle;
+      max-height: 400px;
+      max-width: 270px;
+      margin: 30px auto 0 auto;
+      transition: 1s all;
+      opacity: 0.6;
+      z-index: 200;
+    }
+    .mySlides img:hover {
+      max-width: 320px;
+      max-height: 450px;
+      opacity: 1;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 1000px;
+      height: 70vh;
+      position: relative;
+      margin: 10px auto 10px auto;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px 25px 0;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active,
+    .dot:hover {
+      background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+      from {
+        opacity: .4
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    footer {
+      position: relative;
+    }
+    #mainH{
+      width: 100%;
+      position: absolute;
+      top: 0;
+      background: transparent;
+      background-image: none;
+      display: block;
+      
+    }
+    #mainH h1{
+      width: 30%;
+      top: 120px;
+    text-align: center; 
+    position: absolute; 
+    font-size: 120px;
+    left: -90px;
+    letter-spacing: 0;
+}
+#mainH a{
+  position: absolute;
+      text-decoration: none;
+    font-size: 40px;
+    left:-30px;
+    top: 330px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+#mainH a:hover{
+  text-shadow: 0 0 5px #fff,
+    0 0 15px #fff,
+    0 0 30px #fff;
+    transition: 0.5s;
+}
+    #mainH .tiger{
+      width: 50%;
+      position: absolute;
+    font-size: 120px;
+    letter-spacing: 22px;
+    color: #5d4277;
+    font-weight:800;  
+    text-align: right !important;
+    top: 32%; 
+    right: -100px;
+}
+#mainH .tiger:hover{
+    text-shadow: 0 0 5px #fff,
+    0 0 15px #fff,
+    0 0 30px #fff;
+    transition: 0.5s;
+}
+#mainH h1:hover{
+    text-shadow: 0 0 5px #fff,
+    0 0 15px #fff;
+    transition: 0.5s;
+}
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+
+      .prev,
+      .next,
+      .text {
+        font-size: 11px
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <a href="./index.html" class="logo" style="cursor: none;"><img src="./static/logo.png" alt=""></a>
+
+
+
+    <input type="checkbox" id="check">
+    <label for="check" class="icons">
+      <i class='bx bx-menu' id="menuIcon"></i>
+      <i class='bx bx-x' id="closeIcon"></i>
+    </label>
+
+    <nav class="navBar">
+      <a href="#" style="--i:1;" id="shopButton">SHOP</a>
+      <a href="#footerMain" style="--i:2;">CONTACT US</a>
+      <div id="cursor"></div>
+    </nav>
+
+    <div class="mainIcons">
+      <a href="#"><i id="searchButton" class='bx bx-search-alt-2' title="Search"></i></a>
+      <a href="#"><i class='bx bxs-heart' title="Favorites"></i></a>
+      <a href="#"><i class='bx bxs-basket' title="Cart"></i></a>
+      <a href="#"><i id="profilButton" class='bx bxs-user' title="Login"></i></a>
+
+    </div>
+
+  </header>
+  <form action="" method="get" class="search">
+    <input type="text" class="search1" placeholder="Arama yap">
+    <input type="submit" class="search2" value="Ara">
+  </form>
+
+  <div class="productSlideContainer">
+    <div class="productSlide">
+      <div class="productSlideA">
+        <a href="./headphones.html" style="--i:3;">Headphones</a>
+        <a href="./earbuds.html" style="--i:4;">Earbuds</a>
+        <a href="./speakers.html" style="--i:5;">Speakers</a>
+        <a href="./gaming.html" style="--i:6;">Gaming</a>
+        <a href="./shopall.html" style="--i:7;">Shop All</a>
+      </div>
+      <div class="word">
+        <span>T</span>
+        <i class='bx bxs-heart'></i>
+        <span>I</span>
+        <i class='bx bxs-heart'></i>
+        <span>G</span>
+        <i class='bx bxs-heart'></i>
+        <span>E</span>
+        <i class='bx bxs-heart'></i>
+        <span>R</span>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+  <div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <img src="./static/acidsnowspeakerdekupe.png" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <img src="./static/acidsnowspeakerdekupe2.png" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <img src="./static/acidsnowspeakerdekupe3.png" style="width:100%">
+    </div>
+
+    <div id="mainH">
+      <h1>Popular <br> Product</h1>
+      <a href="./speakersaciddarkmoss.html">Review Now!</a>
+      <span class="tiger">Wild <br>Like a <br>Tiger!</span>
+    </div>
+
+
+  </div>
+  <br>
+
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+
+
+
+
+
+  <footer>
+    <div class="foot">
+      <!-- <div class="clawTwo">
+        <div class="clawLeft"><img class="clawPicLeft cPic" src="./static/izyeni.jpg" alt=""></div>
+        <div class="clawRight"><img class="clawPicRight cPic" src="./static/izyeni.jpg" alt=""></div>
+      </div> -->
+
+      <div class="footerMiddle">
+        <div class="footerSocial">
+          <h2>Follow Us</h2>
+          <!-- <div class="socialIcons">
+                  <span><a href="https://www.instagram.com/"><i class='bx bxl-instagram-alt' ></i></a></span>
+                  <span><a href="https://www.facebook.com/"><i class='bx bxl-facebook'></i></a></span>
+                  <span><a href="https://twitter.com/"><i class='bx bxl-twitter'></i></a></span>
+                  <span><a href="https://www.youtube.com/"><i class='bx bxl-youtube'></i></a></span>
+              </div> -->
+          <ul>
+            <li>
+              <a href="https://www.instagram.com/" target="_blank"><i class='bx bxl-instagram-alt'></i></a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/" target="_blank"><i class='bx bxl-facebook'></i></a>
+            </li>
+            <li>
+              <a href="https://twitter.com/" target="_blank"><i class='bx bxl-twitter'></i></a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/" target="_blank"><i class='bx bxl-youtube'></i></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footerHref">
+          <ul>
+            <li>
+              <a href="#">
+                <p>Help Center</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <p>Warranty</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <p>Product Help</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <p>Order Status</p>
+              </a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <a href="#">
+                <p>Bulk Orders</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <p>Custom Product</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <p>Recycling</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <p>Pay Later</p>
+              </a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <a href="#">
+                <p>About</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <p>Careers</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <p>Press Releases</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <p>Contact Us</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+
+        <div class="footerContact">
+          <div class="footerPhone">
+            <h3>+90 000 000 0000</h3>
+            <hr>
+            <i class='bx bxs-phone'></i>
+          </div>
+          <div class="footerAddress">
+            <h3>Piazza Venezia, 11, 00187 Rome Italy</h3>
+            <hr>
+            <i class='bx bx-current-location'></i>
+          </div>
+          <div class="footerMail">
+            <h3>info@tiger.com</h3>
+            <hr>
+            <i class='bx bxs-envelope'></i>
+          </div>
+        </div>
+
+        <div class="lastTexts">
+          <h3>Designed and developed by <img src="./static/logo-yatay.png" alt=""> </h3>
+          <h4>© 2023 Tiger.com All Rights Reserved</h3>
+        </div>
+      </div>
+
+
+    </div>
+  </footer>
+
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
+  </script>
+  <script src="./script.js"></script>
+</body>
+
+</html>

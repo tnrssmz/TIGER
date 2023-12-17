@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiger - Register/Login</title>
+    <link rel="shortcut icon" href="./static/logo.png">
+    <link rel="stylesheet" href="./style.css">
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+    <div id="containerrlMain">
+
+        <div id="containerrl2">
+            <img src="./tigerhead.png" id="logo" class="image" alt="logo">
+        </div>
+
+
+        <div id="containerrl">
+            <div class="cardrl">
+                <input type="checkbox" id="chk" aria-hidden="true" name="">
+                <div class="contentrl">
+
+
+                    <!-- LOGIN -->
+                    <div class="frontrl">
+                        <div class="innerrl">
+                            <img src="./static/logo.png" alt="">
+                            <h2>Log in</h2>
+                            <p>please login to your account.</p>
+                            <input type="text" name="txt" placeholder="User name" id="loginName">
+                            <input type="password" name="pswd" placeholder="Password" id="loginPass">
+                            <a href="#">forget password?</a>
+                            <label for="chk" aria-hidden="true">back to register page <i class='bx bx-chevron-right'
+                                    style="font-size: 15px;"></i></label>
+                            <button onclick="giris()" type="submit" id="loginBtn">Log in</button>
+                        </div>
+                    </div>
+                    <!-- LOGIN SON -->
+
+
+
+                    <!-- REGISTER -->
+                    <div class="backrl">
+                        <div class="innerrl">
+                            <img src="./static/logo.png" alt="">
+                            <h2>Register</h2>
+                            <p>let's get you on board.</p>
+                            <input type="text" name="txt" placeholder="User name" id="registerName">
+                            <input type="email" name="email" placeholder="Email" id="registerMail">
+                            <input type="password" name="pswd" placeholder="Password" id="registerPass">
+                            <button type="submit" id="registerBtn" onclick="showPopup()">Register</button>
+                            <label for="chk" aria-hidden="true"><i class='bx bx-chevron-left'
+                                    style="font-size: 15px;"></i>
+                                back to log in page <i class='bx bx-chevron-right' style="font-size: 15px;"></i></label>
+                        </div>
+                    </div>
+                    <!-- REGISTER SON -->
+                    <div id="popup">
+                        <p>please fill in all the fields.</p>
+                    </div>
+                    <div id="popup2">
+                        <p>saved.</p>
+                    </div>
+                    <div id="popup3">
+                        <p>invalid username or password.</p>
+                    </div>
+                    <div id="popup4">
+                        <p>please fill in all the fields.</p>
+                    </div>
+                    <div id="popup5">
+                        <p>welcome.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://nextparticle.nextco.de/nextparticle.min.js"></script> -->
+    <!-- <script src="https://nextparticle.nextco.de/nextparticle.min.js"></script> -->
+    
+    
+    <script src="https://nextparticle.nextco.de/nextparticle.min.js"></script>
+    <script src="./registerlogin.js"></script>
+
+    <script>
+        (function(){
+            const photo = document.getElementById('logo')
+            nextParticle = new NextParticle({
+                image: document.all.logo,
+                height: window.innerHeight,
+                maxWidth: window.innerWidth * 0.6,
+                particleGap: 2,
+            });
+
+        })()
+
+    </script>
+</body>
+
+</html>
